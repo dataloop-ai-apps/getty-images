@@ -9,7 +9,7 @@ logger = logging.getLogger('[GETTY]')
 class ServiceRunner(dl.BaseServiceRunner):
 
     def __init__(self):
-        self.session = GettySession()
+        self.session = GettySession(runner=self)
 
     def search_and_add_images(self, dataset: dl.Dataset, phrase=None, n_images=10):
         """

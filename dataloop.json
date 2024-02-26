@@ -1,3 +1,70 @@
 {
-
+    "displayName": "Getty Images",
+    "name": "getty-images",
+    "description": "Add image to a dataset based on Getty Images database.",
+    "scope": "public",
+    "version": "0.0.14",
+    "attributes": {
+        "Provider": "Getty",
+    },
+    "codebase": {
+        "type": "git",
+        "gitUrl": "https://github.com/dataloop-ai-apps/getty-images.git",
+        "gitTag": "0.0.14"
+    },
+    "components": {
+        "modules": [
+            {
+                "name": "getty_images",
+                "entryPoint": "runner.py",
+                "className": "ServiceRunner",
+                "initInputs": [                ],
+                "functions": [
+                    {
+                        "name": "search_and_add_images",
+                        "input": [
+                            {
+                                "type": "Dataset",
+                                "name": "dataset"
+                            },
+                                                        {
+                                "type": "String",
+                                "name": "phrase"
+                            },
+                                                        {
+                                "type": "Int",
+                                "name": "n_images"
+                            }
+                        ],
+                        "output": [
+                        ],
+                        "displayIcon": "crop"
+                    }
+                ]
+            }
+        ],
+        "services": [
+            {
+                "name": "getty-images",
+                "moduleName": "getty-images",
+                "initParams": {                },
+                "secrets": [],
+                "runtime": {
+                    "podType": "regular-xs",
+                    "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.5.0",
+                    "numReplicas": 1,
+                    "concurrency": 10,
+                    "singleAgent": false,
+                    "autoscaler": {
+                        "type": "rabbitmq",
+                        "minReplicas": 0,
+                        "maxReplicas": 1,
+                        "queueLength": 10
+                    },
+                    "preemptible": false
+                },
+                "operation": "none"
+            }
+        ]
+    }
 }
