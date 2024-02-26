@@ -19,7 +19,7 @@ class ServiceRunner(dl.BaseServiceRunner):
         :param n_images: number of images to upload
         :return:
         """
-        self.session.run()
+        self.session.run(dataset=dataset, search_phrase=phrase, n_images=n_images)
 
 
 def test():
