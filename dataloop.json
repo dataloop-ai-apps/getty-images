@@ -5,7 +5,7 @@
     "scope": "public",
     "version": "0.0.14",
     "attributes": {
-        "Provider": "Getty",
+        "Provider": "Getty"
     },
     "codebase": {
         "type": "git",
@@ -13,27 +13,44 @@
         "gitTag": "0.0.14"
     },
     "components": {
+        "toolbars": [
+            {
+                "displayName": "Import Getty Images",
+                "invoke": {
+                    "type": "function",
+                    "namespace": "getty_images.search_and_add_images"
+                },
+                "location": "datasetBrowserApps",
+                "icon": "icon-dl-edit"
+            }
+        ],
         "modules": [
             {
                 "name": "getty_images",
                 "entryPoint": "runner.py",
                 "className": "ServiceRunner",
-                "initInputs": [                ],
+                "initInputs": [],
                 "functions": [
                     {
                         "name": "search_and_add_images",
+                        "displayName": "Import Getty Images",
+                        "description": "Add images to the current Dataset from the Getty Images search",
                         "input": [
                             {
                                 "type": "Dataset",
-                                "name": "dataset"
+                                "name": "dataset",
+                                "description": "Destination Dataset"
+
                             },
-                                                        {
+                            {
                                 "type": "String",
-                                "name": "phrase"
+                                "name": "phrase",
+                                "description": "Search phrase for the Getty platform"
                             },
-                                                        {
+                            {
                                 "type": "Int",
-                                "name": "n_images"
+                                "name": "n_images",
+                                "description": "Number of images to add"
                             }
                         ],
                         "output": [
@@ -47,7 +64,7 @@
             {
                 "name": "getty-images",
                 "moduleName": "getty-images",
-                "initParams": {                },
+                "initParams": {},
                 "secrets": [],
                 "runtime": {
                     "podType": "regular-xs",
