@@ -68,7 +68,7 @@
                 "secrets": [],
                 "runtime": {
                     "podType": "regular-xs",
-                    "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.5.0",
+                    "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.6.0",
                     "numReplicas": 1,
                     "concurrency": 10,
                     "singleAgent": false,
