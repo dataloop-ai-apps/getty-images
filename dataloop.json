@@ -3,7 +3,7 @@
   "name": "getty-images",
   "description": "Add image to a dataset based on Getty Images database.",
   "scope": "public",
-  "version": "0.0.14",
+  "version": "0.0.17",
   "attributes": {
     "Provider": "Getty Images",
     "Category": "Element",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/getty-images.git",
-    "gitTag": "0.0.14"
+    "gitTag": "0.0.17"
   },
   "components": {
     "toolbars": [
@@ -50,7 +50,7 @@
                 "description": "Search phrase for the Getty platform"
               },
               {
-                "type": "Int",
+                "type": "Integer",
                 "name": "n_images",
                 "description": "Number of images to add"
               }
