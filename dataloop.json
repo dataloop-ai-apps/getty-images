@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/getty-images.git",
-    "gitTag": "0.0.17"
+    "gitTag": "0.0.18"
   },
   "components": {
     "toolbars": [
@@ -46,12 +46,12 @@
               },
               {
                 "type": "String",
-                "name": "phrase",
-                "description": "Search phrase for the Getty platform"
+                "name": "search_phrase",
+                "description": "Search phrase"
               },
               {
                 "type": "Integer",
-                "name": "n_images",
+                "name": "number_of_images",
                 "description": "Number of images to add"
               }
             ],
@@ -67,7 +67,7 @@
         "moduleName": "getty-images",
         "runtime": {
           "podType": "regular-xs",
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.6.0",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.9.0",
           "concurrency": 10,
           "autoscaler": {
             "minReplicas": 0,

@@ -11,15 +11,15 @@ class ServiceRunner(dl.BaseServiceRunner):
     def __init__(self):
         self.session = GettySession(runner=self)
 
-    def search_and_add_images(self, dataset: dl.Dataset, phrase=None, n_images=10):
+    def search_and_add_images(self, dataset: dl.Dataset, search_phrase=None, number_of_images=10):
         """
         Inflate dataset with items from getty
         :param dataset: dataset to inflate
-        :param phrase: phrase to search in getty
-        :param n_images: number of images to upload
+        :param search_phrase: phrase to search in getty
+        :param number_of_images: number of images to upload
         :return:
         """
-        self.session.run(dataset=dataset, search_phrase=phrase, n_images=n_images)
+        self.session.run(dataset=dataset, search_phrase=search_phrase, n_images=number_of_images)
 
 
 def test():
