@@ -1,7 +1,7 @@
 {
   "displayName": "Getty Images",
   "name": "getty-images",
-  "description": "Add image to a dataset based on Getty Images database.",
+  "description": "Add image to a dataset based on Getty Images database, This is a paid application. If you wish to purchase a Getty Images package - please contact our sales team or your Dataloop representative",
   "scope": "public",
   "version": "0.0.17",
   "attributes": {
