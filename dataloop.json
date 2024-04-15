@@ -1,0 +1,81 @@
+{
+  "displayName": "Getty Images",
+  "name": "getty-images",
+  "description": "Add image to a dataset based on Getty Images database, This is a paid application. If you wish to purchase a Getty Images package - please contact our sales team or your Dataloop representative",
+  "scope": "public",
+  "version": "0.0.19",
+  "attributes": {
+    "Provider": "Getty Images",
+    "Category": "Element",
+    "Element type": "Model",
+    "Gen AI": ["Image Generation", "Image Modification"]
+  },
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/getty-images.git",
+    "gitTag": "0.0.19"
+  },
+  "components": {
+    "toolbars": [
+      {
+        "displayName": "Import Getty Images",
+        "invoke": {
+          "type": "function",
+          "namespace": "getty-images.search_and_add_images"
+        },
+        "location": "datasetBrowserApps",
+        "icon": "icon-dl-getty-images-dark"
+      }
+    ],
+    "modules": [
+      {
+        "name": "getty-images",
+        "entryPoint": "runner.py",
+        "className": "ServiceRunner",
+        "initInputs": [],
+        "functions": [
+          {
+            "name": "search_and_add_images",
+            "displayName": "Import Getty Images",
+            "description": "Add images to the current Dataset from the Getty Images search",
+            "input": [
+              {
+                "type": "Dataset",
+                "name": "dataset",
+                "description": "Destination Dataset"
+              },
+              {
+                "type": "String",
+                "name": "search_phrase",
+                "description": "Search phrase"
+              },
+              {
+                "type": "Integer",
+                "name": "number_of_images",
+                "description": "Number of images to add"
+              }
+            ],
+            "output": [
+            ]
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "getty-images",
+        "moduleName": "getty-images",
+        "runtime": {
+          "podType": "regular-xs",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/getty_images:0.9.0",
+          "concurrency": 10,
+          "autoscaler": {
+            "minReplicas": 0,
+            "maxReplicas": 1,
+            "queueLength": 10
+          }
+        }
+      }
+    ]
+  }
+}
