@@ -6,8 +6,8 @@
   "version": "0.0.21",
   "attributes": {
     "Provider": "Getty Images",
-    "Category": "Element",
-    "Element type": "Model",
+    "Category": "Application",
+    "Application type": "Model",
     "Gen AI": ["Image Generation", "Image Modification"]
   },
   "codebase": {
