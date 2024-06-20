@@ -7,7 +7,7 @@
   "attributes": {
     "Provider": "Getty Images",
     "Category": "Application",
-    "Application type": "Model",
+    "Application Type": "Model",
     "Gen AI": ["Image Generation", "Image Modification"]
   },
   "codebase": {
