@@ -18,6 +18,7 @@
   "components": {
     "toolbars": [
       {
+        "name": "import-getty-images",
         "displayName": "Import Getty Images",
         "invoke": {
           "type": "function",
@@ -55,8 +56,7 @@
                 "description": "Number of images to add"
               }
             ],
-            "output": [
-            ]
+            "output": []
           }
         ]
       }
